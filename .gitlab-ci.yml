@@ -1,0 +1,7 @@
+build:
+  script:
+    - apt update -y
+    - apt install npm -y
+    - npm i -g yarn
+    - yarn
+    - docker build . -t simple-app:v1
