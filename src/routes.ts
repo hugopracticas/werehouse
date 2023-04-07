@@ -1,5 +1,5 @@
 import { Express, Request, Response } from "express";
-import { validateStudent, defaultResponse, addDevices } from './controller/student.controller';
+import { validateStudent, defaultResponse, addDevices, deviceResponse } from './controller/student.controller';
 
 function routes(app: Express){
     app.get('/', defaultResponse );
@@ -7,6 +7,7 @@ function routes(app: Express){
     app.post('/students', validateStudent);
 
     app.post('/addDevice', addDevices);
+    app.get('/allDevices', deviceResponse);
 }
 
 export default routes;

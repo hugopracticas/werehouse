@@ -24,7 +24,6 @@ export function defaultResponse(req:Request, res: Response){
 
 
 /**Metodo Post */
-
 export function addDevices(req: Request, res: Response){
     console.log("body:", req.body);
     if( validDevice( req.body ) ){
@@ -36,4 +35,12 @@ export function addDevices(req: Request, res: Response){
             status: "Device has failed"
         })
     }   
+}
+
+/**Metodo Get */
+export function deviceResponse( req:Request, res: Response){
+    console.log("body:", req.body);
+    res.status( 200 ).send({
+        status: "Show all devices"
+    })
 }
